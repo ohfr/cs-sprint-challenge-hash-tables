@@ -4,6 +4,21 @@ def intersection(arrays):
     """
     # Your code here
 
+    lookup = {}
+    result  = []
+
+    for array in arrays:
+        for item in array:
+            if item in lookup:
+                lookup[item] +=1
+            else:
+                lookup[item] =1
+    
+    for key in lookup.keys():
+        if lookup[key] == len(arrays):
+            result.append(key)
+
+
     return result
 
 
